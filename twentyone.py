@@ -22,6 +22,9 @@ class Dealer():
             return 'hit'
         return 'stand'
 
+    def make_play(self):
+        self.determine_play(self.get_hand_total())
+
 def _hand_total(hand):
     values = [None, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10]
     value_map = {k: v for k, v in zip(_cards, values)}

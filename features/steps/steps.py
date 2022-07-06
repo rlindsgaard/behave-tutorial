@@ -44,6 +44,9 @@ def step_impl(context, total):
     dt = context.dealer_total
     assert dt == total, f'{dt} == {total}'
 
+@Then('the dealer chooses a play')
+def step_impl(context):
+    assert context.dealer.make_play() in ['stand', 'hit']
 
 @Then('the {play} is correct')
 def step_impl(context, play):
