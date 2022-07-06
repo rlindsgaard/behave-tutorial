@@ -15,3 +15,20 @@ Scenario Outline: Get hand total
   | Q,Q,A | 21    |
   | Q,A   | 21    |
   | A,A,A | 13    |
+
+Scenario Outline: Dealer plays by the rules
+  Given a hand <total>
+  when the dealer determines a play
+  then the <play> is correct
+
+  Examples: Hands
+  | total | play  |
+  | 10    | hit   |
+  | 15    | hit   |
+  | 16    | hit   |
+  | 17    | stand |
+  | 18    | stand |
+  | 19    | stand |
+  | 20    | stand |
+  | 21    | stand |
+  | 22    | stand |

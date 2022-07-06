@@ -17,6 +17,10 @@ class Dealer():
     def get_hand_total(self):
         return _hand_total(self.hand)
 
+    def determine_play(self, total):
+        if total < 17:
+            return 'hit'
+        return 'stand'
 
 def _hand_total(hand):
     values = [None, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10]
